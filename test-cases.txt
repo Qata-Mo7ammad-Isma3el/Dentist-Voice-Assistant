@@ -1,0 +1,59 @@
+Test case 1:
+
+أهلاً، المريض اليوم جاي على تنظيف أسنان routine checkup. ما عنده أي أمراض مزمنة ولا حساسية من أي أدوية. آخر زيارة له كانت قبل سنة تقريباً عملنا له filling على ضرس رقم 27.
+
+الفحص السريري بين إنه في calculus deposits على الأسنان الأمامية السفلية وinflammation خفيفة باللثة. ما أخذنا أشعة اليوم.
+
+التشخيص mild gingivitis بسبب ال plaque accumulation.
+
+عملنا full mouth scaling باستخدام ultrasonic scaler. ما استخدمنا تخدير.
+
+ما كتبنا له أدوية بس قلنا له يستخدم غسول فم chlorhexidine مرتين باليوم لمدة أسبوعين ويفرشي أسنانه مرتين باليوم ويرجع بعد 6 شهور للمتابعة.
+
+التكلفة 25 دينار.
+
+
+Test case 2:
+
+المريضة اليوم عمرها 32 سنة جاية تشتكي من ألم بضرسها رقم 36 من حوالي 3 أيام، الألم بزيد مع الأكل والمشروبات الباردة. المريضة عندها thyroid disorder وبتاخذ Eltroxin 50mcg كل يوم. ما عندها حساسية من أي شي.
+
+تاريخها السني إنه عملت extraction لضرس العقل رقم 48 السنة الماضية.
+
+بالفحص السريري لقينا deep caries على ال occlusal surface تبع ضرس 36 مع tenderness on percussion خفيفة. اللثة حوالين الضرس طبيعية. أخذنا periapical x-ray وطلع التسوس قريب من ال pulp بس ما في periapical pathology.
+
+التشخيص reversible pulpitis on tooth number 36.
+
+خطة العلاج إنه نعمل composite filling واذا ما تحسنت الأعراض ممكن نحتاج root canal treatment.
+
+اليوم عملنا caries excavation و composite filling class II باستخدام 3M Filtek Z250 shade A3. استخدمنا تخدير inferior alveolar nerve block بـ Lidocaine 2% with adrenaline. واستخدمنا rubber dam isolation و bonding agent من 3M Single Bond.
+
+كتبنا لها Brufen 400mg عند اللزوم للألم.
+
+قلنا لها تتجنب الأكل على الجهة اليمين لمدة ساعتين وإذا استمر الألم أكثر من أسبوع ترجع علينا.
+
+التكلفة التقريبية 45 دينار. ملاحظة: المريضة كانت متوترة شوي وطلبت تسمع موسيقى خلال العلاج.
+
+
+Test Case 3: 
+
+المريض عمره 45 سنة جاي يشتكي من ألم شديد ومستمر بضرسه رقم 46 من حوالي أسبوع. الألم بوقظه من النوم وبزيد مع الحار. عنده سكري type 2 وضغط وبياخذ Metformin 1000mg مرتين باليوم و Lisinopril 10mg مرة باليوم. عنده حساسية من Penicillin و Sulfa drugs.
+
+تاريخه السني إنه عمل crown على ضرس 46 من 3 سنين وعمل root canal على ضرس 16 من 5 سنين.
+
+بالفحص السريري ضرس 46 عليه crown وفي tenderness on percussion شديدة و swelling بسيط بال buccal vestibule. ال probing depths حوالين الضرس طبيعية. كمان لاحظنا secondary caries على ضرس 47 على ال mesial surface بس بدون أعراض.
+
+أخذنا periapical radiograph لضرس 46 و 47. ضرس 46 بين periapical radiolucency كبيرة حوالي 5mm حوالين ال apex مع previous root canal treatment ناقص ما وصل لل apex. ضرس 47 بين interproximal radiolucency بال mesial surface.
+
+التشخيص: ضرس 46 previously treated with failed root canal و periapical abscess. ضرس 47 moderate caries.
+
+خطة العلاج: root canal retreatment لضرس 46 مع new crown بعدين. وcomposite filling لضرس 47 بزيارة ثانية.
+
+اليوم عملنا crown removal على ضرس 46 وبعدين access و retreatment. شلنا ال old gutta percha باستخدام ProTaper retreatment files ونظفنا ال canals باستخدام sodium hypochlorite 2.5% و EDTA 17%. حطينا calcium hydroxide dressing و temporary filling Cavit.
+
+التخدير كان inferior alveolar nerve block مع long buccal nerve block باستخدام Articaine 4% with adrenaline 1:100,000 بسبب حساسيته من بعض الأدوية فضلنا Articaine.
+
+كتبنا له Clindamycin 300mg أربع مرات باليوم لمدة 7 أيام بدل Amoxicillin بسبب الحساسية. و Voltaren 50mg ثلاث مرات باليوم لمدة 3 أيام. وكمان Panadol Extra عند اللزوم.
+
+قلنا له لا ياكل على الجهة اليسار ويتجنب الأكل الحار والقاسي ويرجع بعد أسبوعين نكمل ال obturation. واذا زاد ال swelling أو ارتفعت حرارته يتواصل معنا فوراً.
+
+التكلفة التقريبية لل retreatment كامل 200 دينار. ملاحظة: المريض ذكر إنه مدخن حوالي باكيت يومياً من 20 سنة ونصحناه بالتوقف عن التدخين.
