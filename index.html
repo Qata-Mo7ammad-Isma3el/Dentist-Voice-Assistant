@@ -839,6 +839,7 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js"></script>
     <script>
         const WEBHOOK_URL = 'https://n8n-n8n.owskqt.easypanel.host/webhook/41e1fde1-94c2-4559-be2c-4d2f4625a246';
 
@@ -950,14 +951,27 @@
                     if (e.data.size > 0) audioChunks.push(e.data);
                 };
 
-                mediaRecorder.onstop = () => {
+                mediaRecorder.onstop = async () => {
                     const mType = mediaRecorder.mimeType || 'audio/webm';
-                    const ext = mType.includes('ogg') ? 'ogg' : mType.includes('mp4') ? 'mp4' : 'webm';
                     const blob = new Blob(audioChunks, { type: mType });
-                    currentFile = new File([blob], `recording.${ext}`, { type: mType });
-
-                    showFilePreview(currentFile);
-                    sendBtn.disabled = false;
+                    
+                    // Convert to MP3
+                    showStatus('', '');
+                    const loadingMsg = document.createElement('div');
+                    loadingMsg.textContent = 'Converting to MP3...';
+                    loadingMsg.style.cssText = 'text-align:center;color:var(--text-dim);font-size:13px;margin-top:12px;';
+                    recordHint.parentElement.appendChild(loadingMsg);
+                    
+                    try {
+                        const mp3Blob = await convertToMP3(blob);
+                        currentFile = new File([mp3Blob], 'recording.mp3', { type: 'audio/mpeg' });
+                        showFilePreview(currentFile);
+                        sendBtn.disabled = false;
+                    } catch (err) {
+                        showStatus('error', 'Failed to convert to MP3: ' + err.message);
+                    } finally {
+                        loadingMsg.remove();
+                    }
 
                     // Stop all tracks
                     stream.getTracks().forEach(t => t.stop());
@@ -1139,6 +1153,69 @@
                 setTimeout(() => { copyBtn.innerHTML = original; }, 2000);
             });
         });
+
+        // ========================
+        // MP3 CONVERSION
+        // ========================
+
+        async function convertToMP3(blob) {
+            const arrayBuffer = await blob.arrayBuffer();
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+            
+            const sampleRate = 44100;
+            const channels = audioBuffer.numberOfChannels;
+            const samples = resampleAudio(audioBuffer, sampleRate);
+            
+            const mp3encoder = new lamejs.Mp3Encoder(channels, sampleRate, 128);
+            const mp3Data = [];
+            
+            const sampleBlockSize = 1152;
+            
+            if (channels === 1) {
+                for (let i = 0; i < samples[0].length; i += sampleBlockSize) {
+                    const sampleChunk = samples[0].subarray(i, i + sampleBlockSize);
+                    const mp3buf = mp3encoder.encodeBuffer(sampleChunk);
+                    if (mp3buf.length > 0) mp3Data.push(mp3buf);
+                }
+            } else {
+                for (let i = 0; i < samples[0].length; i += sampleBlockSize) {
+                    const left = samples[0].subarray(i, i + sampleBlockSize);
+                    const right = samples[1].subarray(i, i + sampleBlockSize);
+                    const mp3buf = mp3encoder.encodeBuffer(left, right);
+                    if (mp3buf.length > 0) mp3Data.push(mp3buf);
+                }
+            }
+            
+            const end = mp3encoder.flush();
+            if (end.length > 0) mp3Data.push(end);
+            
+            return new Blob(mp3Data, { type: 'audio/mpeg' });
+        }
+        
+        function resampleAudio(audioBuffer, targetSampleRate) {
+            const channels = audioBuffer.numberOfChannels;
+            const samples = [];
+            
+            for (let ch = 0; ch < channels; ch++) {
+                const channelData = audioBuffer.getChannelData(ch);
+                const samplesFloat32 = new Float32Array(channelData.length);
+                
+                for (let i = 0; i < channelData.length; i++) {
+                    samplesFloat32[i] = channelData[i];
+                }
+                
+                const samplesInt16 = new Int16Array(samplesFloat32.length);
+                for (let i = 0; i < samplesFloat32.length; i++) {
+                    const s = Math.max(-1, Math.min(1, samplesFloat32[i]));
+                    samplesInt16[i] = s < 0 ? s * 0x8000 : s * 0x7FFF;
+                }
+                
+                samples.push(samplesInt16);
+            }
+            
+            return samples;
+        }
 
         // ========================
         // HELPERS
